@@ -404,7 +404,7 @@ section {
 }
 
 .home .slide .content h3 {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--black);
   text-transform: capitalize;
   text-transform: uppercase;
@@ -456,7 +456,8 @@ section {
   gap: 3rem;
 }
 
-.about .row .video {
+/* .about .row .video {
+  background-image: url('images/about-us.jpg');
   -webkit-box-flex: 1;
       -ms-flex: 1 1 41rem;
           flex: 1 1 41rem;
@@ -464,6 +465,14 @@ section {
 
 .about .row .video video {
   width: 100%;
+} */
+.about .row .video {
+  background-image: url('../images/about-us.jpg');
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  flex: 1 1 41rem; /* Flexbox layout remains for responsiveness */
+  height: 300px; /* Add a height to make the div visible */
 }
 
 .about .row .content {
@@ -960,4 +969,133 @@ section {
   .about .row .content h3 {
     font-size: 2.5rem;
   }
+}
+
+
+
+
+.why-choose-us {
+  width: 83%;
+  margin: auto;
+  padding: 50px 20px; /* Adjusted for better spacing on smaller screens */
+  background-color: #fff;
+  color: #333; /* Default text color */
+}
+
+.why-choose-us .heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222; /* Consistent heading color */
+}
+
+.why-choose-us .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.why-choose-us .content {
+  flex: 1;
+  padding: 0 20px; /* Adjusted padding for better spacing */
+}
+
+.why-choose-us .content h3 {
+  font-size: 4rem;
+  color:var(--yellow)
+}
+
+.why-choose-us .content p {
+  font-size: 1rem;
+  line-height: 1.6; /* Adjusted line height for readability */
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.why-choose-us .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color:var(--yellow) ;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none; /* Added to remove underline from links */
+}
+
+.why-choose-us .features {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Consistent gap */
+}
+
+.why-choose-us .feature {
+  flex: 0 0 calc(50% - 20px); /* Adjusted for consistent spacing */
+  background-color: #f9f9f9; /* Background color for feature cards */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.why-choose-us .feature i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+    color:var(--yellow)
+
+}
+
+.why-choose-us .feature h4 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #333; /* Consistent heading color */
+}
+
+.why-choose-us .feature p {
+  font-size: 1rem;
+  color: #666; /* Consistent paragraph color */
+}
+
+/* Footer Specific */
+footer p {
+  font-size: 0.9rem;
+  color: #bbb; /* Consistent footer color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .why-choose-us .row {
+    flex-direction: column; /* Stack elements on smaller screens */
+  }
+
+  .why-choose-us .content {
+    padding: 0; /* Remove padding on smaller screens */
+
+  }
+  .why-choose-us .content h3{
+    font-size: 2rem;
+}
+.why-choose-us .btn{
+  margin-bottom: 2rem;
+  max-width: max-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+  .why-choose-us .features {
+    gap: 15px; /* Consistent gap on smaller screens */
+  }
+
+  .why-choose-us .feature {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+}
+
+
+
+
+
+
+/* chaipiya */
+.no-display{
+  display: none;
 }

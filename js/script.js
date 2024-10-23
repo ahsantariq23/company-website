@@ -98,3 +98,53 @@ var swiper = new Swiper(".logo-slider", {
       },
    },
 });
+
+// JavaScript code to handle form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+   event.preventDefault(); // Prevent the form from submitting the usual way
+   
+   // Get the values from the form inputs
+   const name = document.getElementById('name').value;
+   const email = document.getElementById('email').value;
+   const phone = document.getElementById('phone').value;
+   const message = document.getElementById('message').value;
+
+   // Create the data object to send
+   const data = {
+     name: name,
+     email: email,
+     phone: phone,
+     message: message
+   };
+
+   // The URL of your Lambda function trigger
+   const lambdaUrl = ' https://p082p0zfh4.execute-api.us-east-1.amazonaws.com/default/london-solutions-store-quotes';
+
+   // Use fetch() to send a POST request
+   console.log(data); // Add this before sending the fetch request
+   fetch(lambdaUrl, {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json' // Make sure the request is in JSON format
+     },
+     body: JSON.stringify(data) // Convert the data object to JSON
+   })
+   .then(response => {
+     if (response.ok) {
+       return response.json(); // Parse JSON response
+     } else {
+       throw new Error('Error sending message.');
+     }
+   })
+   .then(data => {
+     // Show an alert for successful submission
+     alert('Message sent successfully!');
+     
+     // Optionally, clear the form fields after success
+     document.getElementById('contactForm').reset();
+   })
+   .catch(error => {
+     // Show an alert for errors
+     alert('Error sending message. Please try again.');
+   });
+ });
